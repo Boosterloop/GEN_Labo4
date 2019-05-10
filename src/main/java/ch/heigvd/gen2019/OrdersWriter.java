@@ -46,7 +46,7 @@ public class OrdersWriter {
         sb.append(product.getCode());
         sb.append("\", ");
         sb.append("\"color\": \"");
-        sb.append(getColorFor(product));
+        sb.append(product.getColor().toString());
         sb.append("\", ");
 
         if (product.getSize() != Product.SIZE_NOT_APPLICABLE) {
@@ -80,9 +80,5 @@ public class OrdersWriter {
             default:
                 return "Invalid Size";
         }
-    }
-
-    private String getColorFor(Product product) {
-        return product.getColor().toString();
     }
 }
