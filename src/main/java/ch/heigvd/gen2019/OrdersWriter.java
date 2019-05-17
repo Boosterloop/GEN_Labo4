@@ -11,7 +11,7 @@ public class OrdersWriter {
         StringBuffer sb = new StringBuffer("{\"orders\": [");
 
         for (int i = 0; i < orders.getOrdersCount(); i++) {
-            orderToJsonString(sb, orders.getOrder(i));
+            orders.getOrder(i).orderToJsonString(sb);
         }
 
         if (orders.getOrdersCount() > 0) {
@@ -19,25 +19,6 @@ public class OrdersWriter {
         }
 
         return sb.append("]}").toString();
-    }
-
-    private void orderToJsonString(StringBuffer sb, Order order) {
-        sb.append("{");
-        sb.append("\"id\": ");
-        sb.append(order.getOrderId());
-        sb.append(", ");
-        sb.append("\"products\": [");
-        for (int j = 0; j < order.getProductsCount(); j++) {
-
-            order.getProduct(j).productToJsonString(sb);
-        }
-
-        if (order.getProductsCount() > 0) {
-            sb.delete(sb.length() - 2, sb.length());
-        }
-
-        sb.append("]");
-        sb.append("}, ");
     }
 
 }
