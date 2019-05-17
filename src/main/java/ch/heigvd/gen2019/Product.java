@@ -2,14 +2,14 @@ package ch.heigvd.gen2019;
 import ch.heigvd.gen2019.color.*;
 
 public class Product {
-    public static final int SIZE_NOT_APPLICABLE = -1;
+    public static final Size SIZE_NOT_APPLICABLE = Size.noSize;
     private String code;
     private Color color;
-    private int size;
+    private Size size;
     private double price;
     private String currency;
 
-    public Product(String code, Color color, int size, double price, String currency) {
+    public Product(String code, Color color, Size size, double price, String currency) {
         this.code = code;
         this.color = color;
         this.size = size;
@@ -25,7 +25,7 @@ public class Product {
         return color;
     }
 
-    public int getSize() {
+    public Size getSize() {
         return size;
     }
 
@@ -38,21 +38,6 @@ public class Product {
     }
 
     String getSizeFor() {
-        switch (getSize()) {
-            case 1:
-                return "XS";
-            case 2:
-                return "S";
-            case 3:
-                return "M";
-            case 4:
-                return "L";
-            case 5:
-                return "XL";
-            case 6:
-                return "XXL";
-            default:
-                return "Invalid Size";
-        }
+        return size.toString();
     }
 }
