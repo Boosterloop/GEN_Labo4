@@ -35,7 +35,8 @@ public class Order {
         sb.append("\"products\": [");
         for (int j = 0; j < getProductsCount(); j++) {
 
-            getProduct(j).productToJsonString(sb);
+            sb.append(getProduct(j).productToJsonString());
+            sb.append(", ");
         }
 
         if (getProductsCount() > 0) {

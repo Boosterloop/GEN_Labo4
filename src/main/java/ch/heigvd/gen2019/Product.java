@@ -41,7 +41,8 @@ public class Product {
         return size.toString();
     }
 
-    void productToJsonString(StringBuffer sb) {
+    String productToJsonString() {
+        StringBuilder sb = new StringBuilder(40);
         sb.append("{");
         sb.append("\"code\": \"");
         sb.append(getCode());
@@ -61,6 +62,7 @@ public class Product {
         sb.append(", ");
         sb.append("\"currency\": \"");
         sb.append(getCurrency());
-        sb.append("\"}, ");
+        sb.append("\"}");
+        return sb.toString();
     }
 }
