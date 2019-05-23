@@ -42,7 +42,7 @@ public class Product {
     }
 
     String productToJsonString() {
-        StringBuilder sb = new StringBuilder(40);
+        StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("\"code\": \"");
         sb.append(getCode());

@@ -27,7 +27,8 @@ public class Order {
         products.add(product);
     }
 
-    void orderToJsonString(StringBuffer sb) {
+    String orderToJsonString() {
+        StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("\"id\": ");
         sb.append(getOrderId());
@@ -44,6 +45,7 @@ public class Order {
         }
 
         sb.append("]");
-        sb.append("}, ");
+        sb.append("}");
+        return sb.toString();
     }
 }

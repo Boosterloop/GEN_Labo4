@@ -22,7 +22,8 @@ public class Orders {
         StringBuffer sb = new StringBuffer("{\"orders\": [");
 
         for (int i = 0; i < getOrdersCount(); i++) {
-            getOrder(i).orderToJsonString(sb);
+            sb.append(getOrder(i).orderToJsonString());
+            sb.append(", ");
         }
 
         if (getOrdersCount() > 0) {
